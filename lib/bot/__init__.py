@@ -4,7 +4,6 @@ from glob import glob
 from asyncio import sleep
 from discord import Game
 from discord.ext.commands import CommandNotFound,CommandOnCooldown
-from ..db import db
 
 PREFIX='.'
 COGS=[path.split("\\")[-1][:-3] for path in glob("./lib/cogs/*.py")]
@@ -28,7 +27,6 @@ class Bot(BotBase):
 		self.cogs_ready=Ready()
 		self.guild=[713107362763767929,673061595303116805]
 		self.scheduler=AsyncIOScheduler()
-		db.autosave(self.scheduler)
 		super().__init__(command_prefix=PREFIX)
 
 	def setup(self):
