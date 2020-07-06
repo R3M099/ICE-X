@@ -1,3 +1,2 @@
 discord
 APScheduler
-python==3.8
