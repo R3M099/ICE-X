@@ -1,6 +1,6 @@
 # ICE X
 
-[![License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](License)
+[![License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A bot for discord made using **Python** module named **Discord.py**
 
