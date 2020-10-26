@@ -1,5 +1,7 @@
 # ICE X
 
+[![License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](License)
+
 A bot for discord made using **Python** module named **Discord.py**
 
 The prefix for the bot is `.`
