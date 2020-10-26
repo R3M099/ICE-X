@@ -1,10 +1,18 @@
 # ICE X
 
-a discord bot for discord made using **Python** module named **Discord.py**
+A bot for discord made using **Python** module named **Discord.py**
 
 The prefix for the bot is `.`
 
 The version of discord.py used is `1.4.1`
+
+## Modmail System : 
+
+The bot has a feature called *Modmail* that allows a User to direct message the bot and state his/her complaint against any member from the server.
+
+The message will be redirected to the Moderators/Administrators of the server automatically.
+
+**NOTE** - Please refrain from using the modmail system for fun purposes or for trolling as it is not made for that purpose.
 
 # COMMANDS
 
@@ -273,3 +281,59 @@ gives the information about the server.
 **Usage : `.userinfo | ui <member/member_ID>`**
 
 gives the information about the specified member.
+
+###### 3. Avatar :
+
+**Aliases** - av
+
+**Required Permissions**
+
+*BOT* - N/A
+
+*User* - N/A
+
+**Usage : `.avatar | av [member/member_ID]`**
+
+gives the avatar of the member if provided or else gives the avatar of the user of the command.
+
+-----------------------------------------------------------------------------------------------
+
+## Astronomy command
+
+###### 1. APOD(Astronomy Picture Of Day) :
+
+**Required Permissions**
+
+*BOT* - N/A
+
+*User* - N/A
+
+**Usage : `.apod`**
+
+gives the Astronomy Picture Of Day(Source-*NASA*).
+
+-----------------------------------------------------------------------------------------------
+
+## Support Command
+
+###### 1. Invite :
+
+**Required Permissions**
+
+*BOT* - N/A
+
+*User* - N/A
+
+**Usage : `.invite`**
+
+sends the invite link of the bot in embedded form.
+
+------------------------------------------------------------------------------------------------
+
+***Want the bot in your server?***
+
+Here is the [Link](https://discord.com/api/oauth2/authorize?client_id=723380957343907911&permissions=8&scope=bot) to invite the bot to in your server.
+
+#License
+
+[ICE X](https://github.com/R3M099/ICE-X) is licensed under [MIT](https://github.com/R3M099/ICE-X/blob/master/LICENSE)
