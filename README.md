@@ -334,6 +334,6 @@ sends the invite link of the bot in embedded form.
 
 Here is the [Link](https://discord.com/api/oauth2/authorize?client_id=723380957343907911&permissions=8&scope=bot) to invite the bot to in your server.
 
-#License
+# License
 
 [ICE X](https://github.com/R3M099/ICE-X) is licensed under [MIT](https://github.com/R3M099/ICE-X/blob/master/LICENSE)
