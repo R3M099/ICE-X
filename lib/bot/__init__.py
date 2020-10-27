@@ -95,7 +95,7 @@ class Bot(BotBase):
 				await message.channel.send(f"**DO NOT MENTION HIM WITHOUT ANY REASON** :face_with_symbols_over_mouth:")'''
 
 		if bot.user in message.mentions:
-			await message.channel.send(f"Hello **{message.author.display_name}**\nPlease type `.help` or `.h` for more info.\nTo get help about commands, type `.help <command name>` or `.h <command name>`.")
+			await message.channel.send(f"Hello **{message.author.display_name}**\nPlease type `.help` or `.h` to get the help embed for the bot.")
 
 		if not message.author.bot:
 			if isinstance(message.channel, DMChannel):
