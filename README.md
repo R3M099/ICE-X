@@ -186,7 +186,7 @@ let the bot say what is in your mind.
 
 *User* - N/A
 
-**Usage : .fact <animal anme>**
+**Usage : `.fact <animal_name>`**
 
 Supported Animals -> Dog, Cat, Bird, Panda, Koala
 
