@@ -62,7 +62,7 @@ class Info(Cog):
 			e.add_field(name=name,value=value,inline=inline)
 		e.set_author(name = f"{ctx.author.display_name}#{ctx.author.discriminator}", icon_url = ctx.author.avatar_url)
 		e.set_thumbnail(url=ctx.guild.icon_url)
-		e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+		e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 		await ctx.send(embed=e)
 
 	@command(name="avatar",aliases=["av"])
@@ -74,7 +74,7 @@ class Info(Cog):
 				description="Avatar",
 				colour=member.colour)
 		e.set_image(url=member.avatar_url)
-		e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+		e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 		await ctx.send(embed=e)
 
 	@Cog.listener()
