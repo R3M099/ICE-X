@@ -53,7 +53,7 @@ class Fun(Cog):
 		e=Embed(title='Pong! :ping_pong:',
 				description=f'Latency:{round(self.bot.latency*1000)}ms',
 				colour=0x44AD25)
-		e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+		e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 		await ctx.send(embed=e)
 
 	@command(name="say")
@@ -89,7 +89,7 @@ class Fun(Cog):
 							colour=0x3CA5C4)
 					if image_link is  not None:
 						e.set_image(url=image_link)
-					e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+					e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 					await ctx.send(embed=e)
 				else:
 					await ctx.send(f'API returned a {response.status} status')
@@ -121,7 +121,7 @@ class Fun(Cog):
 						colour=0xD6CD1D)
 				if image_link is not None:
 					e.set_image(url=image_link)
-				e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+				e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 				await ctx.send(embed=e)
 				
 			else:
@@ -140,7 +140,7 @@ class Fun(Cog):
 						  description = data["punchline"],
 						  colour = ctx.author.colour)
 
-				e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+				e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 				await ctx.send(embed = e)
 
 			else:
@@ -159,7 +159,7 @@ class Fun(Cog):
 						  description = data["delivery"],
 						  colour = ctx.author.colour)
 
-				e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+				e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 				await ctx.send(embed = e)
 
 			else:
@@ -177,7 +177,7 @@ class Fun(Cog):
 				e = Embed(description = data["value"]["joke"],
 						  colour = ctx.author.colour)
 				e.set_author(name = "Chuck Noris#0000")
-				e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+				e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 				await ctx.send(embed = e)
 
 			else:

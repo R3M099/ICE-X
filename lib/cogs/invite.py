@@ -14,7 +14,7 @@ class Invite(Cog):
 				  colour = 0x0cb44e)
 		e.set_author(name = f"{ctx.author.display_name}#{ctx.author.discriminator}", icon_url = ctx.author.avatar_url)
 		e.add_field(name = "Invite Link", value = '**[Invite Me](https://discord.com/api/oauth2/authorize?client_id=723380957343907911&permissions=8&scope=bot "Invite the bot to your server")**')
-		e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+		e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 
 		await ctx.send(embed = e)
 

@@ -35,7 +35,7 @@ class Xkcd(Cog):
 				e.set_author(name = f"{ctx.author.display_name}#{ctx.author.discriminator}", icon_url = ctx.author.avatar_url)
 				if image_link is not None:
 					e.set_image(url = image_link)
-				e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
+				e.set_footer(text = f"Requested by {ctx.author.display_name} | {t.strftime('%b %d, %Y | %I:%M %p UTC')}")
 				await ctx.send(embed = e)
 
 			else:
