@@ -6,11 +6,9 @@
 
 Visit the following [page](https://r3m099.github.io/ICE-X-website/)
 
-![](BotPfp.png)
-
 A bot for discord made using **Python** module named **Discord.py**
 
-The prefix for the bot is `.`
+The default prefix for the bot when it joins a server is `.`. This can be changed later by using `prefix` command.
 
 The version of discord.py used is `1.4.1`
 
@@ -26,7 +24,7 @@ The message will be redirected to the Moderators/Administrators of the server au
 
 ***Type `.help` or `.h` to get the help embed for the bot***
 
-***Type `.help <command_name>` or `.h <command_name>` to get help for the specified command***
+*Assuming that prefix is not changed*
 
 ## Moderation commands
 
@@ -38,7 +36,7 @@ The message will be redirected to the Moderators/Administrators of the server au
 
 *User* - manage messages
 
-**Usage : `.purge <no. of messages>`**
+**Usage : `purge <no. of messages>`**
 
 Purges/Clears/deletes the given number of messages from the channel.
 
@@ -50,7 +48,7 @@ Purges/Clears/deletes the given number of messages from the channel.
 
 *User* - kick member
 
-**Usage : `.kick <member(s)/member(s)_ID> [reason]`**
+**Usage : `kick <member(s)/member(s)_ID> [reason]`**
 
 Kicks the specified member/members from the server. It supports multi member kick.
 
@@ -62,7 +60,7 @@ Kicks the specified member/members from the server. It supports multi member kic
 
 *User* - ban member
 
-**Usage : `.ban <member(s)/member(s)_ID> [reason]`**
+**Usage : `ban <member(s)/member(s)_ID> [reason]`**
 
 bans the specified member/members from the server. It supports mass ban.
 
@@ -74,7 +72,7 @@ bans the specified member/members from the server. It supports mass ban.
 
 *User* - ban member
 
-**Usage : `.unban <member_ID>`**
+**Usage : `unban <member_ID>`**
 
 unbans the specified member from the server.
 
@@ -86,7 +84,7 @@ unbans the specified member from the server.
 
 *User* - manage roles
 
-**Usage : `.mute <member/member_ID> [reason]`**
+**Usage : `mute <member/member_ID> [reason]`**
 
 mutes the specified member/members from the server.
 
@@ -98,7 +96,7 @@ mutes the specified member/members from the server.
 
 *User* - manage roles
 
-**Usage : `.unmute <member/member_ID>`**
+**Usage : `unmute <member/member_ID>`**
 
 unmutes the muted member/members from the server.
 
@@ -112,7 +110,7 @@ unmutes the muted member/members from the server.
 
 *User* - manage roles
 
-**Usage : `.addrole | add <member/member_ID> <role_name>`**
+**Usage : `addrole | add <member/member_ID> <role_name>`**
 
 adds a given role to the member.
 
@@ -126,7 +124,7 @@ adds a given role to the member.
 
 *User* - manage roles
 
-**Usage : `.removerole | remove <member/member_ID> <role_name>`**
+**Usage : `removerole | remove <member/member_ID> <role_name>`**
 
 removes the given role from the member.
 
@@ -144,7 +142,7 @@ removes the given role from the member.
 
 *User* - N/A
 
-**Usage : `.hello | hi | Hello | Hi`**
+**Usage : `hello | hi | Hello | Hi`**
 
 greets the user with a message.
 
@@ -156,7 +154,7 @@ greets the user with a message.
 
 *User* - N/A
 
-**Usage : `.8ball <question>`**
+**Usage : `8ball <question>`**
 
 ask any question to the magic 8 ball.
 
@@ -168,7 +166,7 @@ ask any question to the magic 8 ball.
 
 *user* - N/A
 
-**Usage : `.ping`**
+**Usage : `ping`**
 
 returns the latency of the bot.
 
@@ -180,7 +178,7 @@ returns the latency of the bot.
 
 *User* - N/A
 
-**Usage : `.say <message>`**
+**Usage : `say <message>`**
 
 let the bot say what is in your mind.
 
@@ -192,7 +190,7 @@ let the bot say what is in your mind.
 
 *User* - N/A
 
-**Usage : `.fact <animal_name>`**
+**Usage : `fact <animal_name>`**
 
 Supported Animals -> Dog, Cat, Bird, Panda, Koala
 
@@ -206,7 +204,7 @@ Gives a fact of the given animal along with an image of that animal.
 
 *User* - N/A
 
-**Usage : `.meme`**
+**Usage : `meme`**
 
 gives a random meme.
 
@@ -218,7 +216,7 @@ gives a random meme.
 
 *User* - N/A
 
-**Usage : `.joke`**
+**Usage : `joke`**
 
 gives a random joke.
 
@@ -230,7 +228,7 @@ gives a random joke.
 
 *User* - N/A
 
-**Usage : `.pjoke`**
+**Usage : `pjoke`**
 
 gives a random programming joke.
 
@@ -242,7 +240,7 @@ gives a random programming joke.
 
 *User* - N/A
 
-**Usage : `.cnjoke`**
+**Usage : `cnjoke`**
 
 gives a random Chuck Norris joke.
 
@@ -254,7 +252,7 @@ gives a random Chuck Norris joke.
 
 *User* - N/A
 
-**Usage : `.xkcd`**
+**Usage : `xkcd`**
 
 gives a random xkcd comic(A webcomic).
 
@@ -272,7 +270,7 @@ gives a random xkcd comic(A webcomic).
 
 *User* - N/A
 
-**Usage : `.serverinfo | si`**
+**Usage : `serverinfo | si`**
 
 gives the information about the server.
 
@@ -286,7 +284,7 @@ gives the information about the server.
 
 *User* - N/A
 
-**Usage : `.userinfo | ui <member/member_ID>`**
+**Usage : `userinfo | ui <member/member_ID>`**
 
 gives the information about the specified member.
 
@@ -300,9 +298,57 @@ gives the information about the specified member.
 
 *User* - N/A
 
-**Usage : `.avatar | av [member/member_ID]`**
+**Usage : `avatar | av [member/member_ID]`**
 
 gives the avatar of the member if provided or else gives the avatar of the user of the command.
+
+###### 4. afk :
+
+**Required Permissions**
+
+*BOT* - N/A
+
+*User* - N/A
+
+**Usage : `afk <time>`**
+
+sets the user to afk for the given time.
+
+###### 5. botinfo :
+
+**Required Permissions**
+
+*BOT* - N/A
+
+*User* - N/A
+
+**Usage : `botinfo`**
+
+gives the information about the bot.
+
+###### 6. prefix :
+
+**Required Permissions**
+
+*BOT* - Administrator
+
+*User* - Administrator
+
+**Usage : `prefix <new_prefix>`**
+
+Changes the prefix for the server.
+
+###### 7. createpoll :
+
+**Required Permissions**
+
+*BOT* - manage server
+
+*User* - manage server
+
+**Usage : `prefix <new_prefix>`**
+
+starts a vote on a given topic
 
 -----------------------------------------------------------------------------------------------
 
@@ -316,7 +362,7 @@ gives the avatar of the member if provided or else gives the avatar of the user 
 
 *User* - N/A
 
-**Usage : `.apod`**
+**Usage : `apod`**
 
 gives the Astronomy Picture Of Day(Source-*NASA*).
 
@@ -332,7 +378,7 @@ gives the Astronomy Picture Of Day(Source-*NASA*).
 
 *User* - N/A
 
-**Usage : `.invite`**
+**Usage : `invite`**
 
 sends the invite link of the bot in embedded form.
 
