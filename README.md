@@ -2,7 +2,9 @@
 
 [![License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[![Website](https://r3m099.github.io/ICE-X-website/-green.svg)](Website)
+## Website for the bot
+
+Visit the following [page](https://r3m099.github.io/ICE-X-website/)
 
 ![](BotPfp.png)
 
