@@ -2,6 +2,8 @@
 
 [![License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+[![Website](https://r3m099.github.io/ICE-X-website/-green.svg)](Website)
+
 ![](BotPfp.png)
 
 A bot for discord made using **Python** module named **Discord.py**
