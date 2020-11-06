@@ -6,11 +6,13 @@
 
 Visit the following [page](https://r3m099.github.io/ICE-X-website/)
 
+-------------------------------------------------------------------------------------------------------------------------
+
 A bot for discord made using **Python** framework named **Discord.py**
 
 The default prefix for the bot when it joins a server is `.`. This can be changed later by using `prefix` command.
 
-The version of discord.py used is `1.4.1`
+The version of discord.py used is `1.5.1`
 
 ## Modmail System : 
 
