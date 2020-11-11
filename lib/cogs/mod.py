@@ -47,6 +47,8 @@ class Mod(Cog):
 			for target in targets:
 				if (ctx.author.top_role.position > target.top_role.position and not target.guild_permissions.administrator):
 					
+					channel = get(target.guild.channels, name = "moderation-logs")
+					
 					await target.kick(reason = reason)
 
 					e=Embed(title="Kicked Member",
@@ -58,7 +60,9 @@ class Mod(Cog):
 					e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
 
 					await ctx.send(f"**{target.display_name}** has been kicked successfully by **{ctx.author.display_name}** for reason: {reason}.")
-					#await self.bot.get_channel(736790701794132029).send(embed = e)
+					if channel is not None:
+						await channel.send(embed = e)
+						break
 
 				elif target.guild_permissions.administrator:
 					await ctx.send("Can't kick an Administrator")
@@ -71,7 +75,7 @@ class Mod(Cog):
 
 				else:
 					await ctx.send(f"{target.display_name} could not be kicked")
-		
+			
 	@kick_member.error
 	async def kick_member_error(self,ctx,exc):
 		if isinstance(exc, CheckFailure):
@@ -92,6 +96,8 @@ class Mod(Cog):
 			for target in targets:
 				if (ctx.author.top_role.position > target.top_role.position and not target.guild_permissions.administrator):
 					
+					channel = get(target.guild.channels, name = "moderation-logs")
+
 					await target.ban(reason = reason)
 
 					e=Embed(title="Banned Member",
@@ -103,7 +109,9 @@ class Mod(Cog):
 					e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
 
 					await ctx.send(f"**{target.display_name}** has been banned successfully by **{ctx.author.display_name}** for reason: {reason}.")
-					#await self.bot.get_channel(736790701794132029).send(embed = e)
+					if channel is not None:
+						await channel.send(embed = e)
+						break
 
 				elif target.guild_permissions.administrator:
 					await ctx.send("Can't ban an Administrator")
@@ -157,6 +165,9 @@ class Mod(Cog):
 		t=datetime.datetime.utcnow()
 
 		if ctx.author.guild_permissions.manage_roles:
+
+			channel = get(member.guild.channels, name = "moderation-logs")
+
 			e=Embed(title='Muted Member',
 					description=f'{member.mention} has been muted successfully.',
 					colour=0x17D8CF)
@@ -176,9 +187,11 @@ class Mod(Cog):
 				for channel in ctx.guild.text_channels:
 					await channel.set_permissions(NewRole,overwrite=overwrite)
 				await member.add_roles(NewRole)
-				await ctx.message.delete()
-				await ctx.send(f"{member.mention} has been muted successfully by **{ctx.author.display_name}** for reason: {reason}.")
-				#await self.bot.get_channel(736790701794132029).send(embed = e)
+				await ctx.send(f"**{member.display_name}** has been muted successfully by **{ctx.author.display_name}** for reason: {reason}.")
+
+				if channel is not None:
+					await channel.send(embed = e)
+					
 				return
 			else:
 				overwrite=PermissionOverwrite()
@@ -186,9 +199,10 @@ class Mod(Cog):
 				for channel in ctx.guild.text_channels:
 					await channel.set_permissions(role,overwrite=overwrite)
 				await member.add_roles(role)
-				await ctx.message.delete()
-				await ctx.send(f"{member.mention} has been muted successfully by **{ctx.author.display_name}** for reason:{reason}.")
-				#await self.bot.get_channel(736790701794132029).send(embed = e)
+				await ctx.send(f"**{member.display_name}** has been muted successfully by **{ctx.author.display_name}** for reason:{reason}.")
+				if channel is not None:
+					await channel.send(embed = e)
+					
 				return
 			return
 
@@ -207,6 +221,7 @@ class Mod(Cog):
 		"""Unmutes a member from the server"""
 		t=datetime.datetime.utcnow()
 		if ctx.author.guild_permissions.manage_roles:
+			channel = get(member.guild.channels, name = "moderation-logs")
 			e=Embed(title='Unmuted Member',
 					description=f'{member.mention} has been unmuted successfully.',
 					colour=0x1046CB)
@@ -220,9 +235,9 @@ class Mod(Cog):
 				pass
 			else:
 				await member.remove_roles(role)
-				await ctx.message.delete()
-				await ctx.send(f"{member.mention} has been unmuted successfully by **{ctx.author.display_name}**.")
-				#await self.bot.get_channel(736790701794132029).send(embed = e)
+				await ctx.send(f"**{member.display_name}** has been unmuted successfully by **{ctx.author.display_name}**.")
+				if channel is not None:
+					await channel.send(embed = e)
 
 		else:
 			await ctx.send(f'You do not have the required permission.')
