@@ -1,5 +1,5 @@
 from discord.ext.commands import Cog,command
-from discord import Forbidden
+from discord.utils import get
 
 class Welcome(Cog):
 	def __init__(self,bot):
@@ -12,20 +12,23 @@ class Welcome(Cog):
 
 	@Cog.listener()
 	async def on_member_join(self,member):
-		try:
-			await member.send(f"Welcome to ***{member.guild.name}***! Enjoy your stay here!!")
-			await member.send("Please read the rules and follow them in order to avoid consequences :pray:")
-			await member.send(f"We got a modmail system so if you have any complaint against any member from the server, DM the bot(20-500 characters) your complaint.\n**Please Refrain yourself from wrong usage of the system as it may get you kicked/banned from the server** ")
-			await self.bot.get_channel(736790701794132029).send(f"Welcome **{member.mention}** to ***{member.guild.name}***! Enjoy your stay here!!")
-		except Forbidden:
-			await self.bot.get_channel(736790701794132029).send(f"Welcome **{member.mention}** to ***{member.guild.name}***! Enjoy your stay here!!")
-
+		channel = get(member.guild.channels, name = "welcome")
+		if channel is not None:	
+			message_1 = await channel.send(f"Welcome **{member.mention}** to ***{member.guild.name}***! Please read the rules before doing anything.\nEnjoy your stay here!!")
+			emoji_1 = "🥳"
+			await message_1.add_reaction(emoji_1)
+		else:
+			pass
+		
 	@Cog.listener()
 	async def on_member_remove(self,member):
-		try:
-			await member.send(f"You have left ***{member.guild.name}***, hope to see you again!!")
-		except Forbidden:
-			await self.bot.get_channel(736790701794132029).send(f"**{member.display_name}** has left the server :pensive:")
+		channel = get(member.guild.channels, name = "welcome")
+		if channel is not None:
+			message_2 = await channel.send(f"**{member.display_name}** has left the server :pensive:")
+			emoji_2 = "😭"
+			await message_2.add_reaction(emoji_2)
+		else:
+			pass
 		
 def setup(bot):
 	bot.add_cog(Welcome(bot))
