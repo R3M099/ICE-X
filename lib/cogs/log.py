@@ -12,7 +12,7 @@ class Log(Cog):
 		if not self.bot.ready:
 			self.bot.cogs_ready.ready_up("log")
 
-	@Cog.listener()
+	'''@Cog.listener()
 	async def on_user_update(self, before, after):
 		t = datetime.datetime.utcnow()
 		if before.avatar_url != after.avatar_url:
@@ -22,7 +22,7 @@ class Log(Cog):
 			e.add_field(name = "Avatar Update", value = after.mention, inline = False)
 			e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
 	
-			await self.bot.get_channel(736790701794132029).send(embed = e)
+			await self.bot.get_channel(736790701794132029).send(embed = e)'''
 
 	@Cog.listener()
 	async def on_member_update(self, before, after):
@@ -30,14 +30,14 @@ class Log(Cog):
 		channel = get(after.guild.channels, name = "moderation-logs")
 		if channel is not None:
 			if before.display_name != after.display_name:
-				e = Embed(title = "Member Update",
-						  description = "Nickname Changed",
+				e = Embed(description = f"**{after.mention} nickname changed**",
 						  colour = 0x620bd2)
 				fields = [("Before:", before.display_name, False),
 						  ("After:", after.display_name, False)]
 
 				for name, value, inline in fields:
 					e.add_field(name = name, value = value, inline = inline)
+				e.set_author(name = f"{after.display_name}#{after.discriminator}", icon_url = after.avatar_url)
 				e.set_thumbnail(url = after.avatar_url)
 				e.set_footer(text = t.strftime('%b %d, %Y | %I:%M %p UTC'))
 				
