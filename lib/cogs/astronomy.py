@@ -14,7 +14,7 @@ class Astronomy(Cog):
 		'''Sends Astronomy Picture of the day'''
 		t = datetime.datetime.utcnow()
 		
-		API_KEY = "gsXzB7Cy6Wk3YfEt8JwY8fJ0nYqjE6kpJECcyDZV"
+		API_KEY = "API_KEY"
 		
 		apod_url = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 
