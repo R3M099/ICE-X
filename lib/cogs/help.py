@@ -65,7 +65,7 @@ class Help(Cog):
 				  (f"7. `joke`", f"gives a random joke.\n**USAGE :** `joke`", False),
 				  (f"8. `pjoke`", f"gives a random programming joke.\n**USAGE :** `pjoke`", False),
 				  (f"9. `cnjoke`", f"gives a random Chuck Norris joke.\n**USAGE :** `cnjoke`", False),
-				  (f"10. `xkcd`", f"gives a random xkcd comic(A webcomic).\n**USAGE :** `xkcd`", False)]
+				  (f"10. `xkcd`", f"gives a random xkcd comic(A webcomic).\n**USAGE :** `xkcd <no. of xkcd>`", False)]
 		
 		for name, value, inline in fields:
 			fun_help_embed.add_field(name = name, value = value, inline = inline)
@@ -110,7 +110,8 @@ class Help(Cog):
 							   	   description = "Available to all members of the server",
 							   	   colour = ctx.author.colour)
 
-		fields = [(f"1. `invite` | *Aliases* : `inv`", f"sends the invite link of the bot in embedded form.\n**USAGE :** `invite`", False)]
+		fields = [(f"1. `invite` | *Aliases* : `inv`", f"sends the invite link of the bot in embedded form.\n**USAGE :** `invite`", False),
+				  (f"2. `source`", f"sends the source code of the bot in embedded form.\n**USAGE :** `source`", False)]
 				  
 		for name, value, inline in fields:
 			support_help_embed.add_field(name = name, value = value, inline = inline)
