@@ -14,7 +14,7 @@ class Xkcd(Cog):
 		'''Gives the current xkcd comic'''
 		t = datetime.datetime.utcnow()
 
-		random_number = random.randint(1, 1000)
+		random_number = random.randint(1, 2386)
 		#await ctx.send(random_number)
 
 		xkcd_url = f"https://xkcd.com/{random_number}/info.0.json"
